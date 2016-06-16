@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"%>
-
+<!--
+    App Name: GDTracker
+    Contributers: Gurpanth Singh (200299024) and Dilpreet Singh
+    website: Gdtracker.azurewebsites.net
+    
+    -->
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <div class="container-fluid">
     <div>
