@@ -1,12 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"%>
-<!--
-    App Name: GDTracker
-    Contributers: Gurpanth Singh (200299024) and Dilpreet Singh
-    website: Gdtracker.azurewebsites.net
-    
-    -->
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
 <div class="container-fluid">
+    <!--Made By Gurpanth Singh 200299024 and Dilpreet Singh -->
     <div>
     <a href="GameDetails.aspx">Add a game</a>
         <!-- Brand and toggle get grouped for better mobile display -->
