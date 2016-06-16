@@ -6,11 +6,12 @@
                 <h5>Add the Game Scores</h5>
                 <br />
                 <div class="form-group">
-                    <label class="control-label" for="teamATextBox">Department Name</label>
+                    <label class="control-label" for="teamATextBox">Team A</label>
                     <asp:TextBox runat="server" CssClass="form-control" ID="teamATextBox" placeholder="Team A Name" required="true"></asp:TextBox>
                 </div>
+                <!--
                 <div class="form-group">
-                    <label class="control-label" for="teamBTextBox">Department Name</label>
+                    <label class="control-label" for="teamBTextBox">Team B</label>
                    <asp:TextBox runat="server" CssClass="form-control" ID="teamBTextBox" placeholder="Team B Name" required="true"></asp:TextBox>
                 </div>
                  <div class="form-group">
@@ -22,7 +23,7 @@
                    <asp:TextBox runat="server" CssClass="form-control" ID="teamBScore" placeholder="Score B Score" required="true"></asp:TextBox>
                 </div>
                  <div class="form-group">
-                            
+                            -->
                     
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server" 
                         UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />

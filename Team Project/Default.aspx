@@ -2,72 +2,36 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-<div class="container-fluid">
-    <!-- Made By Gurpanth Singh 200299024 and Dilpreet Singh -->
-    <div>
-    <a href="GameDetails.aspx">Add a game</a>
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar">
-          <nav>
-  <ul class="pager">
-    <li class="previous"><a href="#"><span aria-hidden="true">&larr;</span> Older</a></li>
-    <li class="next"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
-  </ul>
-</nav>
-             <div class="pagination pagination-success" style="float:right">
-        </div>
-       
-    </div>
+ <div class="col-lg-12" >
+        <div class="col-md-offset-2 col-lg-8">
+           <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                    ID="GameGridView" AutoGenerateColumns="False" DataKeyNames="GameID"
+                       PagerStyle-CssClass="pagination-ys" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+                    <AlternatingRowStyle BackColor="#CCCCCC" />
+                    <Columns>
+                   
+                        <asp:BoundField DataField="GameName" HeaderText="Game Name" Visible="true" SortExpression="GameName" />
+                        <asp:BoundField DataField="GameLocation" HeaderText="Game Location" Visible="true" SortExpression="GameLocation" />
+                         <asp:BoundField DataField="GameDescription" HeaderText="Game Description" Visible="true" SortExpression="GameDescription" />
+                        <asp:BoundField DataField="TeamA" HeaderText="Team A" Visible="true" SortExpression="TeamA" />
+                        <asp:BoundField DataField="TeamB" HeaderText="Team B" Visible="true" SortExpression="TeamB" />
+                        <asp:BoundField DataField="TeamAScore" HeaderText="Team A Score" Visible="true" SortExpression="TeamAScore" />
+                        <asp:BoundField DataField="TeamBScore" HeaderText="Team B Score" Visible="true" SortExpression="TeamBScore" />
+                        <asp:BoundField DataField="Spectators" HeaderText="Spectators" Visible="true" SortExpression="Spectators" />
+                        <asp:BoundField DataField="WinningTeam" HeaderText="WinningTeam" Visible="true" SortExpression="WinningTeam" />
+                        <asp:BoundField DataField="GameDate" HeaderText="Game Date" Visible="true" SortExpression="GameDate"
+                            DataFormatString="{0:MMM dd, yyyy}" />
+                                            </Columns>
+                    <FooterStyle BackColor="#CCCCCC" />
+                    <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
 
-      <div class="col-md-4">
-        <div class="well">
-          
-
-            <h3> <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Liga_BBVA.svg" class="img-rounded" alt="Cinque Terre" width="180" height="40"><span class="label label-default"></span></h3>
-            <div class="row">
- 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Weeks</th>
-      <th>Real Madrid</th>
-      <th>FC Barcelona</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>0 <span class="label label-danger pull-right">- 1%</span></td>
-      <td>1 <span class="label label-success pull-right">+ 1%</span></td>
-      </tr>
-   
-    <tr>
-      <th scope="row">2</th>
-      <th>Bayen Munich</th>
-      <th>BVB</th>
-    </tr>
-       <tr>
-      <th scope="row"></th>
-      <td>0 <span class="label label-danger pull-right">- 1%</span></td>
-      <td>1 <span class="label label-success pull-right">+ 1%</span></td>
-      </tr>
-       <tr>
-      <th scope="row">3</th>
-      <th>Liverpool</th>
-      <th>Man Unt</th>
-    </tr>
-       <tr>
-      <th scope="row"></th>
-      <td>0 <span class="label label-danger pull-right">- 1%</span></td>
-      <td>1 <span class="label label-success pull-right">+ 1%</span></td>
-      </tr>
-  </tbody>
-</table>
-        </div>
-      </div>
-      
-    
-   
-    </div>
-    </div>
+<PagerStyle CssClass="pagination-ys" BackColor="#999999" ForeColor="Black" HorizontalAlign="Center"></PagerStyle>
+                    <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#808080" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#383838" />
+                </asp:GridView>
+        </div> 
+    </div>                                   
 </asp:Content>
