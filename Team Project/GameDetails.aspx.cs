@@ -38,7 +38,7 @@ namespace Team_Project
                 if (updatedGame != null)
                 {
                     teamATextBox.Text = updatedGame.teamA;
-                    teamBTextBox.Text = updatedGame.TeamB;
+                    teamBTextBox.Text = updatedGame.teamB;
                 }
             }
         }
@@ -73,7 +73,8 @@ namespace Team_Project
 
                 // add form data to the new student record
                 newGame.teamA = teamATextBox.Text;
-               
+                newGame.teamB = teamBTextBox.Text;
+                
 
                 // use LINQ to ADO.NET to add / insert new student into the database
 

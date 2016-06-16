@@ -4,32 +4,36 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="basicModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Game.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Game">
           <Key>
             <PropertyRef Name="gameID" />
           </Key>
           <Property Name="gameID" Type="int" Nullable="false" />
           <Property Name="teamA" Type="char" MaxLength="50" Nullable="false" />
-          <Property Name="TeamB" Type="char" MaxLength="50" />
+          <Property Name="teamB" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="teamAScore" Type="int" Nullable="false" />
+          <Property Name="teamBScore" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="basicModelStoreContainer">
+        <EntityContainer Name="GameStoreContainer">
           <EntitySet Name="Game" EntityType="Self.Game" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="basicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="Game" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Game">
           <Key>
             <PropertyRef Name="gameID" />
           </Key>
           <Property Name="gameID" Type="Int32" Nullable="false" />
           <Property Name="teamA" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
-          <Property Name="TeamB" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="teamB" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="teamAScore" Type="Int32" Nullable="false" />
+          <Property Name="teamBScore" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="GameData" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Connect" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Games" EntityType="Self.Game" />
         </EntityContainer>
       </Schema>
@@ -37,13 +41,15 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="basicModelStoreContainer" CdmEntityContainer="GameData">
+        <EntityContainerMapping StorageEntityContainer="GameStoreContainer" CdmEntityContainer="Connect">
           <EntitySetMapping Name="Games">
-            <EntityTypeMapping TypeName="basicModel.Game">
+            <EntityTypeMapping TypeName="Game.Game">
               <MappingFragment StoreEntitySet="Game">
                 <ScalarProperty Name="gameID" ColumnName="gameID" />
                 <ScalarProperty Name="teamA" ColumnName="teamA" />
-                <ScalarProperty Name="TeamB" ColumnName="TeamB" />
+                <ScalarProperty Name="teamB" ColumnName="teamB" />
+                <ScalarProperty Name="teamAScore" ColumnName="teamAScore" />
+                <ScalarProperty Name="teamBScore" ColumnName="teamBScore" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

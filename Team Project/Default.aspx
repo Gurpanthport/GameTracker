@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs"%>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <a href="GameDetails.aspx" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> ADD Game</a>
  <div class="col-lg-12" >
+                     
         <div class="col-md-offset-2 col-lg-8">
            <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                     ID="GameGridView" AutoGenerateColumns="False" DataKeyNames="GameID"

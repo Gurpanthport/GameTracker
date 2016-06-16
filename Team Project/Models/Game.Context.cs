@@ -12,14 +12,14 @@ namespace Team_Project.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+
     public partial class GameData : DbContext
     {
         public GameData()
             : base("name=GameData")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

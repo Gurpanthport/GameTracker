@@ -16,6 +16,8 @@ namespace Team_Project.Models
     {
         public int gameID { get; set; }
         public string teamA { get; set; }
-        public string TeamB { get; set; }
+        public string teamB { get; set; }
+        public int teamAScore { get; set; }
+        public int teamBScore { get; set; }
     }
 }
