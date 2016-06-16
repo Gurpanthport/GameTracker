@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Team_Project
 {
-    public partial class gameConnection : System.Web.UI.Page
+    public partial class gameData : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

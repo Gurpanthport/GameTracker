@@ -83,7 +83,6 @@ namespace Team_Project
                     db.Games.Add(newGame);
                 }
 
-
                 // save our changes - also updates and inserts
                 db.SaveChanges();
 
