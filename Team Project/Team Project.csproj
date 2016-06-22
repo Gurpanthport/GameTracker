@@ -80,23 +80,24 @@
     <Content Include="Content\app.css" />
     <Content Include="Default.aspx" />
     <Content Include="GameDetails.aspx" />
-    <Content Include="Models\Game.Context.tt">
+    <Content Include="Games.aspx" />
+    <Content Include="Models\GameModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Game.edmx</DependentUpon>
-      <LastGenOutput>Game.Context.cs</LastGenOutput>
+      <DependentUpon>GameModel.edmx</DependentUpon>
+      <LastGenOutput>GameModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Game.tt">
+    <Content Include="Models\GameModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Game.edmx</DependentUpon>
-      <LastGenOutput>Game1.cs</LastGenOutput>
+      <DependentUpon>GameModel.edmx</DependentUpon>
+      <LastGenOutput>GameModel.cs</LastGenOutput>
     </Content>
     <Content Include="packages.config" />
-    <EntityDeploy Include="Models\Game.edmx">
+    <EntityDeploy Include="Models\GameModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Game.Designer.cs</LastGenOutput>
+      <LastGenOutput>GameModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Game.edmx.diagram">
-      <DependentUpon>Game.edmx</DependentUpon>
+    <Content Include="Models\GameModel.edmx.diagram">
+      <DependentUpon>GameModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Registration.aspx" />
@@ -163,23 +164,30 @@
     <Compile Include="GameDetails.aspx.designer.cs">
       <DependentUpon>GameDetails.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Game.Context.cs">
+    <Compile Include="Games.aspx.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games.aspx.designer.cs">
+      <DependentUpon>Games.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\game.cs">
+      <DependentUpon>GameModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GameModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Game.Context.tt</DependentUpon>
+      <DependentUpon>GameModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Game.cs">
-      <DependentUpon>Game.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Game.Designer.cs">
+    <Compile Include="Models\GameModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Game.edmx</DependentUpon>
+      <DependentUpon>GameModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Game1.cs">
+    <Compile Include="Models\GameModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Game.tt</DependentUpon>
+      <DependentUpon>GameModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.aspx.cs">

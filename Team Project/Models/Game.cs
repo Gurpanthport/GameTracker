@@ -12,7 +12,7 @@ namespace Team_Project.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Game
+    public partial class game
     {
         public int gameID { get; set; }
         public string teamA { get; set; }

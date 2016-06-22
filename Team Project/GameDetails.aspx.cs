@@ -17,29 +17,33 @@ namespace Team_Project
         {
             if ((!IsPostBack) && (Request.QueryString.Count > 0))
             {
-                //this.GetGame();
+                this.GetGame();
             }
         }
         
         protected void GetGame()
         {
             // populate the form with existing department data from the db
-            int GameID = Convert.ToInt32(Request.QueryString["GameID"]);
+            int GameID = Convert.ToInt32(Request.QueryString["gameID"]);
 
             // connect to the EF DB
-            using (GameData db = new GameData())
+            using (GameConnection db = new GameConnection())
             {
                 // populate a department instance with the departmentID from the URL parameter
-                Game updatedGame = (from Games in db.Games
+                game updatedGame = (from Games in db.games
                                                 where Games.gameID == GameID
                                                 select Games).FirstOrDefault();
 
                 // map the Department properties to the form controls
                 if (updatedGame != null)
                 {
-                    teamATextBox.Text = updatedGame.teamA;
-                    teamBTextBox.Text = updatedGame.teamB;
+                    teamA.Text = updatedGame.teamA;
+                    teamB.Text = updatedGame.teamB;
+                    teamAScore.Text = updatedGame.teamA;
+                    teamBScore.Text = updatedGame.teamB;
+                   
                 }
+               
             }
         }
         
@@ -52,43 +56,20 @@ namespace Team_Project
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            using (GameData db = new GameData())
+            using (GameConnection db = new GameConnection())
             {
-                // use the Student model to create a new student object and
-                // save a new record
-                Game newGame = new Game();
+                game newGame = new game();
 
-                int GameID = 0;
+                newGame.teamA = teamA.Text;
+                newGame.teamB = teamB.Text;
+                newGame.teamAScore = Convert.ToInt32(teamAScore.Text);
+                newGame.teamBScore = Convert.ToInt32(teamBScore.Text);
 
-                if (Request.QueryString.Count > 0) // our URL has a StudentID in it
-                {
-                    // get the id from the URL
-                    GameID = Convert.ToInt32(Request.QueryString["GameID"]);
-
-                    // get the current student from EF DB
-                    newGame = (from game in db.Games
-                               where game.gameID == GameID
-                               select game).FirstOrDefault();
-                }
-
-                // add form data to the new student record
-                newGame.teamA = teamATextBox.Text;
-                newGame.teamB = teamBTextBox.Text;
-                
-
-                // use LINQ to ADO.NET to add / insert new student into the database
-
-                if (GameID == 0)
-                {
-                    db.Games.Add(newGame);
-                }
-
-                // save our changes - also updates and inserts
+                db.games.Add(newGame);
                 db.SaveChanges();
 
-                // Redirect back to the updated students page
-                Response.Redirect("~/Default.aspx");
+
             }
         }
     }
-}
+    }

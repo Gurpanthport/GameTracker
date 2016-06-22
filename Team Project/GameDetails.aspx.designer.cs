@@ -13,22 +13,22 @@ namespace Team_Project {
     public partial class GameDetails {
         
         /// <summary>
-        /// teamATextBox control.
+        /// teamA control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox teamATextBox;
+        protected global::System.Web.UI.WebControls.TextBox teamA;
         
         /// <summary>
-        /// teamBTextBox control.
+        /// teamB control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox teamBTextBox;
+        protected global::System.Web.UI.WebControls.TextBox teamB;
         
         /// <summary>
         /// teamAScore control.

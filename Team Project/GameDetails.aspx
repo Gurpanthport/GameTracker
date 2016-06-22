@@ -1,27 +1,28 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameDetails.aspx.cs" Inherits="Team_Project.GameDetails" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+  <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-5">
                 <h5>Add the Game Scores</h5>
                 <br />
                 <div class="form-group">
-                 <asp:TextBox runat="server" CssClass="form-control" ID="teamATextBox" placeholder="Team A Name" required="true"></asp:TextBox>
+                    <label class="control-label" for="teamA">Team A</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="teamA" placeholder="TeamA" required="true"></asp:TextBox>
                 </div>
-                
                 <div class="form-group">
-                   <asp:TextBox runat="server" CssClass="form-control" ID="teamBTextBox" placeholder="Team B Name" required="true"></asp:TextBox>
+                    <label class="control-label" for="teamB">Team B</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="teamB" placeholder="TeamB" required="true"></asp:TextBox>
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
+                    <label class="control-label" for="teamAScore">TeamA Score</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="teamAScore" placeholder="TeamAScore" required="true" ></asp:TextBox>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="teamBScore">TeamB Score</label>
+                    <asp:TextBox runat="server" CssClass="form-control" ID="teamBScore" placeholder="TeamBScore" required="true" ></asp:TextBox>
+</div>
                     
-                   <asp:TextBox runat="server" CssClass="form-control" ID="teamAScore" placeholder="Team A Score" required="true"></asp:TextBox>
-                </div>
-                 <div class="form-group">
-                    
-                   <asp:TextBox runat="server" CssClass="form-control" ID="teamBScore" placeholder="Score B Score" required="true"></asp:TextBox>
-                </div>
-                 <div class="form-group">
-                            
+                
                     
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server" 
                         UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />
@@ -32,8 +33,5 @@
                 </div>
                 
               </div>
-       
-        </div>
-        
     
 </asp:Content>
